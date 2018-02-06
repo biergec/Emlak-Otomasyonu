@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Emlak</RootNamespace>
     <AssemblyName>Emlak</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,8 +34,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,14 +59,129 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AnaMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AnaMenu.Designer.cs">
+      <DependentUpon>AnaMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ayarlar.cs">
+      <DependentUpon>emlakDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="emlakDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>emlakDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="emlakDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>emlakDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="emlakDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>emlakDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Ev.cs">
+      <DependentUpon>emlakDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvDuzenleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvDuzenleme.Designer.cs">
+      <DependentUpon>EvDuzenleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvEkleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvEkleme.Designer.cs">
+      <DependentUpon>EvEkleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvListelemeSorgulama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvListelemeSorgulama.Designer.cs">
+      <DependentUpon>EvListelemeSorgulama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GirisEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GirisEkrani.Designer.cs">
+      <DependentUpon>GirisEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ilceler.cs">
+      <DependentUpon>emlakDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="iller.cs">
+      <DependentUpon>emlakDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kayit.Designer.cs">
+      <DependentUpon>Kayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KiralikEv.cs">
+      <DependentUpon>emlakDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kiralik_ev_select_Result.cs">
+      <DependentUpon>emlakDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici.cs">
+      <DependentUpon>emlakDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Musteri.cs">
+      <DependentUpon>emlakDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MusteriEvSatis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MusteriEvSatis.Designer.cs">
+      <DependentUpon>MusteriEvSatis.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SatilanKiralananEvler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SatilanKiralananEvler.Designer.cs">
+      <DependentUpon>SatilanKiralananEvler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SatilikEv.cs">
+      <DependentUpon>emlakDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SingletonClass.cs" />
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>emlakDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>emlakDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>emlakDB.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AnaMenu.resx">
+      <DependentUpon>AnaMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvDuzenleme.resx">
+      <DependentUpon>EvDuzenleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvEkleme.resx">
+      <DependentUpon>EvEkleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvListelemeSorgulama.resx">
+      <DependentUpon>EvListelemeSorgulama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GirisEkrani.resx">
+      <DependentUpon>GirisEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kayit.resx">
+      <DependentUpon>Kayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MusteriEvSatis.resx">
+      <DependentUpon>MusteriEvSatis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +190,20 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SatilanKiralananEvler.resx">
+      <DependentUpon>SatilanKiralananEvler.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <EntityDeploy Include="emlakDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>emlakDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="emlakDB.edmx.diagram">
+      <DependentUpon>emlakDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +216,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="emlakDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>emlakDB.edmx</DependentUpon>
+      <LastGenOutput>emlakDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="emlakDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>emlakDB.edmx</DependentUpon>
+      <LastGenOutput>emlakDB.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
